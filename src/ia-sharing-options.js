@@ -57,7 +57,7 @@ export class IASharingOptions extends LitElement {
     return `mailto:?body=https://archive.org/details/${this.identifier}&subject=${this.description} : ${this.creator} : Free Download, Borrow, and Streaming : Internet Archive`;
   }
 
-  get sharingOptions() {
+  get sharingItems() {
     return IASharingOptions.sharingOptions.map(option => (
       html`<li><a class="${option.method}" href="${this[`${option.method}URL`]}">${option.name}</a></li>`
     ));
@@ -81,7 +81,7 @@ export class IASharingOptions extends LitElement {
         <a href="#" class="close" @click=${this.unsetSelectedMenuOption}>${closeIcon}</a>
       </header>
       <ul>
-        ${this.sharingOptions}
+        ${this.sharingItems}
       </ul>
     `;
   }
