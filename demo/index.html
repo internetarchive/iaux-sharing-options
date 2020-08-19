@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharing Options</title>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #ffffff;
+        background: #181818;
+      }
+    }
+    :root {
+      --menuButtonLabelDisplay: block;
+      --menuSliderBg: #151515;
+      --primaryTextColor: #fff;
+      --menuWidth: 320px;
+      --animationTiming: .25s;
+      --iconFillColor: #fff;
+      --iconStrokeColor: #fff;
+      --activeButtonBg: #282828;
+      --shareLinkColor: #fff;
+      --shareIconBorder: #fff;
+    }
+
+    html {
+      font: normal 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    button {
+      height: 2rem;
+      margin: 1rem;
+    }
+
+    main {
+      display: grid;
+      height: 100vh;
+      grid-template-rows: 1fr auto;
+    }
+
+    #menu {
+      position: relative;
+      width: var(--menuWidth);
+    }
+  </style>
+</head>
+<body>
+  <button>Toggle menu</button>
+  <main>
+    <div id="menu"></div>
+  </main>
+
+  <script type="module">
+    import { render } from 'lit-html';
+    import { html, css, LitElement } from 'lit-element';
+    import IAIcons from '@internetarchive/ia-icons';
+    import '@internetarchive/ia-menu-slider/ia-menu-slider';
+    import '../ia-sharing-options.js';
+
+    customElements.define('ia-icon', class extends IAIcons {
+      static get styles() {
+        return [css`
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        `, IAIcons.styles];
+      }
+    });
+
+    const menuSlider = document.createElement('ia-menu-slider');
+    const sharingMenu = {
+      icon: html`
+        <ia-icon icon="share"></ia-icon>
+      `,
+      label: 'Share this item',
+      id: 'share',
+      component: html`<ia-sharing-options
+        identifier="goody"
+        type="book"
+        creator="Welsh, Charles"
+        description="The history of Little Goody Two-Shoes : otherwise called Mrs. Margery Two-Shoes ... [1766 edition]"
+      ></ia-sharing-options>`
+    };
+    menuSlider.menus = [sharingMenu];
+    menuSlider.open = true;
+    menuSlider.selectedMenu = sharingMenu.id;
+
+    document.querySelector('#menu').appendChild(menuSlider);
+
+    menuSlider.updateComplete.then(() => {
+      // Toggle button for menu drawer
+      document.querySelector('button').addEventListener('click', () => {
+        menuSlider.open = !menuSlider.open;
+      });
+
+      const sharingOptions = menuSlider.shadowRoot.querySelector('ia-sharing-options');
+
+      Object.assign(sharingOptions, {
+      });
+    });
+  </script>
+</body>
+</html>

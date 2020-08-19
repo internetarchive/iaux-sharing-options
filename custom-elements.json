@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "ia-sharing-options",
+      "description": "Sharing options for Internet Archive items",
+      "properties": [
+        {
+          "name": "creator",
+          "type": "String",
+          "description": "Item creator",
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "description": "Item description",
+        },
+        {
+          "name": "identifier",
+          "type": "String",
+          "description": "Item identifier",
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "description": "Item type (book, audio, video, etc.)",
+        }
+      ],
+      "events": [],
+      "slots": [],
+      "cssProperties": [
+        {
+          "name": "--shareLinkColor",
+          "description": "Share link text color",
+          "type": "Color"
+        },
+        {
+          "name": "--shareIconBorder",
+          "description": "Share link icon border color",
+          "type": "Color"
+        }
+      ]
+    }
+  ]
+}
