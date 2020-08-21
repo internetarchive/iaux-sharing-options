@@ -24,6 +24,8 @@ h3 {
 
 a.close {
   justify-self: end;
+  --iconWidth: 18px;
+  --iconHeight: 18px;
 }
 
 ul {
@@ -41,32 +43,15 @@ li a {
   color: var(--shareLinkColor);
 }
 
-li a:before {
+li ia-icon {
+  --iconWidth: 28px;
+  --iconHeight: 28px;
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  padding: .2rem;
   margin-right: 1rem;
   vertical-align: middle;
-  content: "";
   border: 1px solid var(--shareIconBorder);
   border-radius: 7px;
-  background: transparent 50% 50% no-repeat;
-  background-size: 100%;
-}
-
-a.twitter:before {
-  background-image: url('../src/images/icon_twitter.png');
-}
-a.facebook:before {
-  background-image: url('../src/images/icon_facebook.png');
-}
-a.tumblr:before {
-  background-image: url('../src/images/icon_tumblr.png');
-}
-a.pinterest:before {
-  background-image: url('../src/images/icon_pinterest.png');
-}
-a.mailto:before {
-  background-image: url('../src/images/icon_email.png');
+  background: var(--shareIconBg);
 }
 `;

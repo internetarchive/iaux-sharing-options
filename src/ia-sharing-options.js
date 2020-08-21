@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit-element';
 import sharingOptionsCSS from './styles/ia-sharing-options.js';
-import closeIcon from './icon_close.js';
 
 export class IASharingOptions extends LitElement {
   static get styles() {
@@ -30,7 +29,7 @@ export class IASharingOptions extends LitElement {
     method: 'pinterest',
   }, {
     name: 'Email',
-    method: 'mailto',
+    method: 'email',
   }];
 
   get encodedDescription() {
@@ -53,13 +52,18 @@ export class IASharingOptions extends LitElement {
     return `http://www.pinterest.com/pin/create/button/?url=https://archive.org/details/${this.identifier}&description=${this.encodedDescription}`;
   }
 
-  get mailtoURL() {
+  get emailURL() {
     return `mailto:?body=https://archive.org/details/${this.identifier}&subject=${this.description} : ${this.creator} : Free Download, Borrow, and Streaming : Internet Archive`;
   }
 
   get sharingItems() {
     return IASharingOptions.sharingOptions.map(option => (
-      html`<li><a class="${option.method}" href="${this[`${option.method}URL`]}">${option.name}</a></li>`
+      html`<li>
+        <a class="${option.method}" href="${this[`${option.method}URL`]}">
+          <ia-icon icon=${option.method}></ia-icon>
+          ${option.name}
+        </a>
+      </li>`
     ));
   }
 
@@ -78,7 +82,7 @@ export class IASharingOptions extends LitElement {
     return html`
       <header>
         <h3>Share this ${this.type}</h3>
-        <a href="#" class="close" @click=${this.unsetSelectedMenuOption}>${closeIcon}</a>
+        <a href="#" class="close" @click=${this.unsetSelectedMenuOption}><ia-icon icon="collapseSidebar"></ia-icon></a>
       </header>
       <ul>
         ${this.sharingItems}
