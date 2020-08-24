@@ -13,6 +13,7 @@ export class IASharingOptions extends LitElement {
 
   static get properties() {
     return {
+      baseHost: { type: String },
       creator: { type: String },
       description: { type: String },
       identifier: { type: String },
@@ -23,17 +24,20 @@ export class IASharingOptions extends LitElement {
 
   constructor() {
     super();
+    this.baseHost = '';
     this.sharingOptions = [];
   }
 
   firstUpdated() {
     const {
+      baseHost,
       creator,
       description,
       identifier,
       type,
     } = this;
     const params = {
+      baseHost,
       creator,
       description,
       identifier,

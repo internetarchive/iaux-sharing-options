@@ -8,6 +8,6 @@ export default class extends Provider {
   }
 
   get url() {
-    return `https://twitter.com/intent/tweet?url=https://archive.org/details/${this.identifier}&via=internetarchive&text=${this.encodedDescription}+%3A+${this.encodedCreator}${this.encodedPromoCopy}`;
+    return `https://twitter.com/intent/tweet?url=https://${this.baseHost}/details/${this.identifier}&via=internetarchive&text=${this.encodedDescription}+%3A+${this.encodedCreator}${this.encodedPromoCopy}`;
   }
 }

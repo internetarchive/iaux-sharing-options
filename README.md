@@ -27,6 +27,7 @@ The necessary properties to build all sharing URLs appear below:
 
 ```
 {
+  baseHost: "archive.org" // The domain name used to build sharing URLs
   identifier: "goody", // Item identifier
   type: "book", // Item type
   creator: "Welsh, Charles", // Item creator

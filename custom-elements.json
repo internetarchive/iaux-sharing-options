@@ -6,6 +6,11 @@
       "description": "Sharing options for Internet Archive items",
       "properties": [
         {
+          "name": "baseHost",
+          "type": "String",
+          "description": "Domain name for sharing URLs",
+        },
+        {
           "name": "creator",
           "type": "String",
           "description": "Item creator",

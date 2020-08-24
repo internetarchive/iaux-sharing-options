@@ -6,6 +6,6 @@ export default class {
   }
 
   get url() {
-    return `https://www.facebook.com/sharer/sharer.php?u=https://archive.org/details/${this.identifier}`;
+    return `https://www.facebook.com/sharer/sharer.php?u=https://${this.baseHost}/details/${this.identifier}`;
   }
 }

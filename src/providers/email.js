@@ -8,6 +8,6 @@ export default class extends Provider {
   }
 
   get url() {
-    return `mailto:?body=https://archive.org/details/${this.identifier}&subject=${this.description} : ${this.creator}${this.promoCopy}`;
+    return `mailto:?body=https://${this.baseHost}/details/${this.identifier}&subject=${this.description} : ${this.creator}${this.promoCopy}`;
   }
 }
