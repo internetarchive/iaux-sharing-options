@@ -42,10 +42,10 @@ describe('<ia-sharing-options>', () => {
 
     await el.updateComplete;
 
-    IASharingOptions.sharingOptions.forEach((option) => {
-      const button = el.shadowRoot.querySelector(`a.${option.method}`);
+    el.sharingOptions.forEach((option) => {
+      const button = el.shadowRoot.querySelector(`a.${option.icon}`);
       expect(button).to.exist;
-      expect(button.getAttribute('href')).to.equal(el[`${option.method}URL`]);
+      expect(button.getAttribute('href')).to.equal(option.url);
     });
   });
 
