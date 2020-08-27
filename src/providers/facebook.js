@@ -1,7 +1,11 @@
+import '@internetarchive/icon-facebook/icon-facebook';
+import { html } from 'lit-element';
+
 export default class {
   constructor(params) {
     this.name = 'Facebook';
-    this.icon = 'facebook';
+    this.icon = html`<ia-icon-facebook></ia-icon-facebook>`;
+    this.class = 'facebook';
     Object.assign(this, params);
   }
 

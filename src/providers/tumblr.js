@@ -1,10 +1,13 @@
+import '@internetarchive/icon-tumblr/icon-tumblr';
+import { html } from 'lit-element';
 import Provider from './provider.js';
 
 export default class extends Provider {
   constructor(params) {
     super(params);
     this.name = 'Tumblr';
-    this.icon = 'tumblr';
+    this.icon = html`<ia-icon-tumblr></ia-icon-tumblr>`;
+    this.class = 'tumblr';
   }
 
   get url() {

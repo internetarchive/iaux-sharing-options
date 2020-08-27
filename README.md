@@ -41,6 +41,8 @@ The necessary properties to build all sharing URLs appear below:
 ia-sharing-options {
   --shareLinkColor: #fff;
   --shareIconBorder: #fff;
+  --textareaColor: #fff;
+  --textareaColor: #151515;
 }
 ```
 

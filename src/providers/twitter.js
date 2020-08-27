@@ -1,10 +1,13 @@
+import '@internetarchive/icon-twitter/icon-twitter';
+import { html } from 'lit-element';
 import Provider from './provider.js';
 
 export default class extends Provider {
   constructor(params) {
     super(params);
     this.name = 'Twitter';
-    this.icon = 'twitter';
+    this.icon = html`<ia-icon-twitter></ia-icon-twitter>`;
+    this.class = 'twitter';
   }
 
   get url() {

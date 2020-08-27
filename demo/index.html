@@ -61,25 +61,14 @@
   <script type="module">
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
-    import IAIcons from '@internetarchive/ia-icons';
+    import '@internetarchive/icon-share/icon-share';
     import '@internetarchive/ia-menu-slider/ia-menu-slider';
     import '../ia-sharing-options.js';
-
-    customElements.define('ia-icon', class extends IAIcons {
-      static get styles() {
-        return [css`
-          svg {
-            width: var(--iconWidth);
-            height: var(--iconHeight);
-          }
-        `, IAIcons.styles];
-      }
-    });
 
     const menuSlider = document.createElement('ia-menu-slider');
     const sharingMenu = {
       icon: html`
-        <ia-icon icon="share"></ia-icon>
+        <ia-icon-share></ia-icon-share>
       `,
       label: 'Share this item',
       id: 'share',

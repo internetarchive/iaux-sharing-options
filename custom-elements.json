@@ -43,6 +43,16 @@
           "name": "--shareIconBorder",
           "description": "Share link icon border color",
           "type": "Color"
+        },
+        {
+          "name": "--textareaColor",
+          "description": "Textarea text color",
+          "type": "Color"
+        },
+        {
+          "name": "--textareaBg",
+          "description": "Textarea background color",
+          "type": "Color"
         }
       ]
     }

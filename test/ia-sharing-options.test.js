@@ -43,7 +43,7 @@ describe('<ia-sharing-options>', () => {
     await el.updateComplete;
 
     el.sharingOptions.forEach((option) => {
-      const button = el.shadowRoot.querySelector(`a.${option.icon}`);
+      const button = el.shadowRoot.querySelector(`a.${option.class}`);
       expect(button).to.exist;
       expect(button.getAttribute('href')).to.equal(option.url);
     });
@@ -67,5 +67,14 @@ describe('<ia-sharing-options>', () => {
 
     el.shadowRoot.querySelector('.close').click();
     expect(el.unsetSelectedMenuOption.callCount).to.equal(1);
+  });
+
+  it('toggles visibility of embed options', async () => {
+    const el = await fixture(container());
+
+    el.toggleEmbedOptions(new Event('click'));
+    await el.updateComplete;
+
+    expect(el.embedOptionsVisible).to.equal(true);
   });
 });

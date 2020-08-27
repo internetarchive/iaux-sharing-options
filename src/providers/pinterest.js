@@ -1,10 +1,13 @@
+import '@internetarchive/icon-pinterest/icon-pinterest';
+import { html } from 'lit-element';
 import Provider from './provider.js';
 
 export default class extends Provider {
   constructor(params) {
     super(params);
     this.name = 'Pinterest';
-    this.icon = 'pinterest';
+    this.icon = html`<ia-icon-pinterest></ia-icon-pinterest>`;
+    this.class = 'pinterest';
   }
 
   get url() {
