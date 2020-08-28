@@ -89,7 +89,7 @@ export class IASharingOptions extends LitElement {
   }
 
   get iframeEmbed() {
-    return html`&lt;iframe src="https://archive.org/embed/${this.identifier}" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen&gt;&lt;/iframe&gt;`;
+    return html`&lt;iframe src="https://${this.baseHost}/embed/${this.identifier}" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen&gt;&lt;/iframe&gt;`;
   }
 
   get bbcodeEmbed() {
