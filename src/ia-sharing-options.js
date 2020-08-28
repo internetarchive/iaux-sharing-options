@@ -126,12 +126,12 @@ export class IASharingOptions extends LitElement {
         ${this.sharingItems}
         ${this.embedOption}
         <div class=${classMap({ visible: this.embedOptionsVisible, embed: true })}>
-          <h4>Iframe Embed</h4>
+          <h4>Embed</h4>
           <div class="code" @click=${copyToClipboard}>
             <textarea readonly="readonly">${this.iframeEmbed}</textarea>
             <small>Copied to clipboard</small>
           </div>
-          <h4>Embed for wordpress.com hosted blogs and archive.org item <description> tags</h4>
+          <h4>Embed for wordpress.com hosted blogs and archive.org item &lt;description&gt; tags</h4>
           <div class="code" @click=${copyToClipboard}>
             <textarea readonly="readonly">${this.bbcodeEmbed}</textarea>
             <small>Copied to clipboard</small>
