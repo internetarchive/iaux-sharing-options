@@ -1,9 +1,4 @@
-import {
-  html,
-  fixture,
-  expect,
-  oneEvent,
-} from '@open-wc/testing';
+import { html, fixture, expect } from '@open-wc/testing';
 import sinon from 'sinon';
 import { IASharingOptions } from '../src/ia-sharing-options.js';
 
@@ -47,26 +42,6 @@ describe('<ia-sharing-options>', () => {
       expect(button).to.exist;
       expect(button.getAttribute('href')).to.equal(option.url);
     });
-  });
-
-  it('emits a custom event to close the menu', async () => {
-    const el = await fixture(container());
-
-    setTimeout(() => (
-      el.unsetSelectedMenuOption(new Event('click'))
-    ));
-    const response = await oneEvent(el, 'menuTypeSelected');
-
-    expect(response).to.exist;
-  });
-
-  it('closes the menu when close element clicked', async () => {
-    IASharingOptions.prototype.unsetSelectedMenuOption = sinon.fake();
-
-    const el = await fixture(container());
-
-    el.shadowRoot.querySelector('.close').click();
-    expect(el.unsetSelectedMenuOption.callCount).to.equal(1);
   });
 
   it('toggles visibility of embed options', async () => {

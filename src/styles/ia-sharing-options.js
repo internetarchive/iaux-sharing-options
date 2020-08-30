@@ -12,8 +12,8 @@ export default css`
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  padding-right: calc(var(--closeMenuIconWidth) + 1.5rem);
 }
 
 h3 {
@@ -24,12 +24,6 @@ h3 {
 
 h4 {
   font-size: 1.4rem;
-}
-
-a.close {
-  justify-self: end;
-  --iconWidth: 18px;
-  --iconHeight: 18px;
 }
 
 ul {

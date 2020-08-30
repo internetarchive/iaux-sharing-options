@@ -19,7 +19,6 @@
     "test:watch": "karma start --auto-watch=true --single-run=false"
   },
   "dependencies": {
-    "@internetarchive/icon-collapse-sidebar": "^1.1.0",
     "@internetarchive/icon-email": "^1.1.1",
     "@internetarchive/icon-facebook": "^1.1.1",
     "@internetarchive/icon-link": "^1.1.1",
@@ -30,7 +29,7 @@
     "lit-html": "^1.1.2"
   },
   "devDependencies": {
-    "@internetarchive/ia-menu-slider": "0.0.2-alpha.09d6bce",
+    "@internetarchive/ia-menu-slider": "0.1.0-alpha.1b6f614",
     "@internetarchive/icon-share": "^1.1.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.0.0",
