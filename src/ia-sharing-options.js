@@ -1,6 +1,5 @@
 import { classMap } from 'lit-html/directives/class-map';
 import { html, LitElement } from 'lit-element';
-import closeIcon from '@internetarchive/icon-collapse-sidebar';
 import '@internetarchive/icon-link/icon-link.js';
 import sharingOptionsCSS from './styles/ia-sharing-options.js';
 import EmailProvider from './providers/email.js';
@@ -105,22 +104,10 @@ export class IASharingOptions extends LitElement {
     this.embedOptionsVisible = !this.embedOptionsVisible;
   }
 
-  unsetSelectedMenuOption(e) {
-    e.preventDefault();
-    this.dispatchEvent(new CustomEvent('menuTypeSelected', {
-      bubbles: true,
-      composed: true,
-      detail: {
-        id: 'share',
-      },
-    }));
-  }
-
   render() {
     return html`
       <header>
         <h3>Share this ${this.type}</h3>
-        <a href="#" class="close" @click=${this.unsetSelectedMenuOption}>${closeIcon}</a>
       </header>
       <ul>
         ${this.sharingItems}
