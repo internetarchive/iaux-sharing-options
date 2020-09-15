@@ -29,6 +29,11 @@
           "name": "type",
           "type": "String",
           "description": "Item type (book, audio, video, etc.)",
+        },
+        {
+          "name": "renderHeader",
+          "type": "Boolean",
+          "description": "draws panel header",
         }
       ],
       "events": [],
