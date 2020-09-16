@@ -1,5 +1,6 @@
 import { classMap } from 'lit-html/directives/class-map';
 import { html, LitElement } from 'lit-element';
+import { nothing } from 'lit-html';
 import '@internetarchive/icon-link/icon-link.js';
 import sharingOptionsCSS from './styles/ia-sharing-options.js';
 import EmailProvider from './providers/email.js';
@@ -33,6 +34,7 @@ export class IASharingOptions extends LitElement {
       identifier: { type: String },
       sharingOptions: { type: Array },
       type: { type: String },
+      renderHeader: { type: Boolean },
     };
   }
 
@@ -104,11 +106,14 @@ export class IASharingOptions extends LitElement {
     this.embedOptionsVisible = !this.embedOptionsVisible;
   }
 
+  get header() {
+    const header = html`<header><h3>Share this ${this.type}</h3></header>`;
+    return this.renderHeader ? header : nothing;
+  }
+
   render() {
     return html`
-      <header>
-        <h3>Share this ${this.type}</h3>
-      </header>
+      ${this.header}
       <ul>
         ${this.sharingItems}
         ${this.embedOption}

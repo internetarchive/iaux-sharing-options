@@ -19,8 +19,8 @@
       --animationTiming: .25s;
       --iconFillColor: #fff;
       --iconStrokeColor: #fff;
-      --iconWidth: 28px;
-      --iconHeight: 28px;
+      --iconWidth: 20px;
+      --iconHeight: 20px;
       --activeButtonBg: #282828;
       --shareLinkColor: #fff;
       --shareIconBorder: #fff;
@@ -72,15 +72,31 @@
       `,
       label: 'Share this item',
       id: 'share',
+      title: 'Share this item',
       component: html`<ia-sharing-options
         identifier="goody"
         type="book"
         creator="Welsh, Charles"
         description="The history of Little Goody Two-Shoes : otherwise called Mrs. Margery Two-Shoes ... [1766 edition]"
-        baseHost="www-shaner.archive.org"
-      ></ia-sharing-options>`
+        baseHost="archive.org"
+      ></ia-sharing-options>`,
     };
-    menuSlider.menus = [sharingMenu];
+    const sharingMenuWithHeader = {
+      icon: html`
+        <ia-icon-share></ia-icon-share>
+      `,
+      label: 'Share this item with header',
+      id: 'share-with-header',
+      component: html`<ia-sharing-options
+        identifier="goody"
+        type="book"
+        creator="Welsh, Charles"
+        description="The history of Little Goody Two-Shoes : otherwise called Mrs. Margery Two-Shoes ... [1766 edition]"
+        baseHost="archive.org"
+        renderHeader="true"
+      ></ia-sharing-options>`,
+    };
+    menuSlider.menus = [sharingMenu, sharingMenuWithHeader];
     menuSlider.open = true;
     menuSlider.selectedMenu = sharingMenu.id;
 

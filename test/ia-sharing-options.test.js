@@ -52,4 +52,16 @@ describe('<ia-sharing-options>', () => {
 
     expect(el.embedOptionsVisible).to.equal(true);
   });
+
+  it('does not show internal header by default', async () => {
+    const el = await fixture(container());
+    expect(el.shadowRoot.querySelector('header')).to.be.null;
+  });
+
+  it('does shows internal header when requested', async () => {
+    const el = await fixture(container());
+    el.renderHeader = true;
+    await el.updateComplete;
+    expect(el.shadowRoot.querySelector('header')).to.not.be.null;
+  });
 });
