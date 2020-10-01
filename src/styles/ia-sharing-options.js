@@ -25,7 +25,7 @@ h4 {
 }
 
 ul {
-  padding: 0;
+  padding: 0 0 2rem 0;
   list-style: none;
 }
 
