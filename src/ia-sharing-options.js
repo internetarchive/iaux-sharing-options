@@ -72,7 +72,7 @@ export class IASharingOptions extends LitElement {
   get sharingItems() {
     return this.sharingOptions.map(option => (
       html`<li>
-        <a class="${option.class}" href="${option.url}">
+        <a class="${option.class}" href="${option.url}" target="_blank">
           ${option.icon}
           ${option.name}
         </a>
