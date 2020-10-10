@@ -54,6 +54,7 @@ li a * {
 }
 .embed.visible {
   display: block;
+  width: 95%;
 }
 
 .embed a {
