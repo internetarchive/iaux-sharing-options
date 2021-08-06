@@ -134,3 +134,5 @@ export class IASharingOptions extends LitElement {
     `;
   }
 }
+
+customElements.define('ia-sharing-options', IASharingOptions);
