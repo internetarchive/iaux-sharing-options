@@ -1,8 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import sinon from 'sinon';
-import { IASharingOptions } from '../src/ia-sharing-options.js';
-
-customElements.define('ia-sharing-options', IASharingOptions);
+import '../src/ia-sharing-options.js';
 
 const identifier = 'goody';
 const itemType = 'book';
