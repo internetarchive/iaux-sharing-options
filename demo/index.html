@@ -59,8 +59,7 @@
   </main>
 
   <script type="module">
-    import { render } from 'lit-html';
-    import { html, css, LitElement } from 'lit-element';
+    import { html } from 'lit-element';
     import '@internetarchive/icon-share/icon-share';
     import '@internetarchive/ia-menu-slider/ia-menu-slider';
     import '../ia-sharing-options.js';
@@ -85,15 +84,16 @@
       icon: html`
         <ia-icon-share></ia-icon-share>
       `,
-      label: 'Share this item with header',
-      id: 'share-with-header',
+      label: 'Share this item WITH SUB PREFIX',
+      id: 'share-with-subprefix',
+      title: 'Share this item w/ `fileSubPrefix`',
       component: html`<ia-sharing-options
         identifier="goody"
+        fileSubPrefix="a b c _123"
         type="book"
         creator="Welsh, Charles"
         description="The history of Little Goody Two-Shoes : otherwise called Mrs. Margery Two-Shoes ... [1766 edition]"
         baseHost="archive.org"
-        renderHeader="true"
       ></ia-sharing-options>`,
     };
     menuSlider.menus = [sharingMenu, sharingMenuWithHeader];
