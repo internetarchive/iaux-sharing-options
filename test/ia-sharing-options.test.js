@@ -7,12 +7,14 @@ const itemType = 'book';
 const creator = 'Welsh, Charles';
 const description = 'The history of Little Goody Two-Shoes : otherwise called Mrs. Margery Two-Shoes ... [1766 edition]';
 
-const container = () => (
+const container = (optionalFileSubprefix = '') => (
   html`<ia-sharing-options
     identifier="${identifier}"
     type="${itemType}"
     creator="${creator}"
     description="${description}"
+    baseHost="archive.org"
+    fileSubPrefix="${optionalFileSubprefix}"
   ></ia-sharing-options>`
 );
 
@@ -61,5 +63,16 @@ describe('<ia-sharing-options>', () => {
     el.renderHeader = true;
     await el.updateComplete;
     expect(el.shadowRoot.querySelector('header')).to.not.be.null;
+  });
+
+  it('sets file subprefix to end of share URLs if present', async () => {
+    const optionalFileSubprefix = 'foo- bar - 123-';
+    const el = await fixture(container(optionalFileSubprefix));
+
+    el.sharingOptions.forEach((option) => {
+      if (option.name !== 'Tumblr') {
+        expect(option.url).to.contain(encodeURIComponent(optionalFileSubprefix));
+      }
+    });
   });
 });

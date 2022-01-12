@@ -17,6 +17,11 @@ export default class {
     return this.encodeString(this.promoCopy);
   }
 
+  get itemPath() {
+    const encodedFileSubPrefix = this.fileSubPrefix ? encodeURIComponent(this.fileSubPrefix) : '';
+    return encodedFileSubPrefix ? `${this.identifier}/${encodedFileSubPrefix}` : this.identifier;
+  }
+
   encodeString(str) {
     return encodeURIComponent(str.replace(/\s/g, '+')).replace(/%2B/g, '+');
   }

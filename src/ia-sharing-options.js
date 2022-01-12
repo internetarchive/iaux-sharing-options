@@ -35,6 +35,7 @@ export class IASharingOptions extends LitElement {
       sharingOptions: { type: Array },
       type: { type: String },
       renderHeader: { type: Boolean },
+      fileSubPrefix: { type: String },
     };
   }
 
@@ -42,6 +43,7 @@ export class IASharingOptions extends LitElement {
     super();
     this.baseHost = '';
     this.sharingOptions = [];
+    this.fileSubPrefix = '';
   }
 
   firstUpdated() {
@@ -51,6 +53,7 @@ export class IASharingOptions extends LitElement {
       description,
       identifier,
       type,
+      fileSubPrefix,
     } = this;
     const params = {
       baseHost,
@@ -58,6 +61,7 @@ export class IASharingOptions extends LitElement {
       description,
       identifier,
       type,
+      fileSubPrefix,
     };
 
     this.sharingOptions = [
