@@ -1,5 +1,5 @@
 import '@internetarchive/icon-facebook/icon-facebook';
-import { html } from 'lit-element';
+import { html } from 'lit';
 import Provider from './provider.js';
 
 export default class extends Provider {
