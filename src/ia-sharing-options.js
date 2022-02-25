@@ -1,6 +1,6 @@
-import { classMap } from 'lit-html/directives/class-map';
-import { html, LitElement } from 'lit-element';
-import { nothing } from 'lit-html';
+import { classMap } from 'lit/directives/class-map';
+import { html, LitElement } from 'lit';
+import { nothing } from 'lit/html.js';
 import '@internetarchive/icon-link/icon-link.js';
 import sharingOptionsCSS from './styles/ia-sharing-options.js';
 import EmailProvider from './providers/email.js';
