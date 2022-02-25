@@ -1,4 +1,4 @@
-import { classMap } from 'lit/directives/class-map';
+import { classMap } from 'lit/directives/class-map.js';
 import { html, LitElement } from 'lit';
 import { nothing } from 'lit/html.js';
 import '@internetarchive/icon-link/icon-link.js';
